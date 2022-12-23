@@ -1,0 +1,562 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&display=swap');
+
+:root {
+  --geel: #f4eb34;
+  --groen: #72A7A6;
+  --black: #000;
+  --wit: #FFFFFF;
+  --licht-grijs: #eee;
+  --donker-grijs: #ccc;
+  --lichtblauw: #e4f2f2;
+  --donkerblauw: #b5dbdc;
+  --font: 'Montserrat';
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  margin: 0px;
+}
+
+@media screen and (max-width:800px) {
+  body {
+    width: 100vw;
+  }
+
+  .Verzendkosten {
+    width: 260vw;
+  }
+
+  header li {
+    width: 25vw;
+  }
+
+
+  header nav {
+    width: 450vw;
+  }
+
+  body .kalender {
+    margin: 0;
+    width: 260vw;
+  }
+}
+
+.Verzendkosten {
+  background-color: var(--geel);
+  padding: 16px;
+  font-size: 14px;
+  text-align: center;
+  font-family: var(--font);
+  font-weight: 400;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 15px 0;
+  font-family: var(--font);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+}
+
+
+header ul {
+  display: flex;
+  margin: -2em;
+  justify-content: flex-end;
+}
+
+ul li a>img {
+  width: 6%;
+  margin-left: 0.5vw;
+}
+
+header ul li {
+  font-size: 12px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0%;
+  width: 70%;
+  margin-right: 0;
+}
+
+nav li {
+  padding: 4vh 0;
+}
+
+nav li a {
+  text-decoration: none;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.li-dagboek {
+  border-bottom: 2px solid var(--groen);
+}
+
+.Vini-Mini {
+  margin-left: 0;
+  width: 10%;
+}
+
+h1 {
+  font-size: 14px;
+  margin-left: 10em;
+  margin-top: 3em;
+  font-family: var(--font);
+  font-weight: 500;
+}
+
+h2 {
+  margin-top: 2em;
+  font-size: 40px;
+  color: var(--groen);
+  font-family: var(--font);
+  font-weight: 700;
+  justify-content: center;
+  display: flex;
+}
+
+/*....GRID....*/
+.Dagboek-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 0.5fr;
+  grid-template-areas:
+    " l k f "
+    " a k r "
+  ;
+
+  grid-column-gap: 0px;
+}
+
+.logboek {
+  grid-area: l;
+}
+
+.kalender {
+  grid-area: k;
+}
+
+.advies {
+ grid-area: f;
+}
+
+.artikels {
+  grid-area: l;
+}
+
+.recepten {
+  grid-area: f;
+}
+
+
+/*....LOGBOEK....*/
+.logboek {
+  margin-top: 5em;
+  margin-bottom: 22em;
+  margin-left: 2em;
+  margin-right: 2em;
+  background-color: var(--geel);
+  border-radius: 0.5em;
+  font-size: 1em;
+  font-weight: 400;
+  text-align: left;
+  font-family: var(--font);
+  border: 5px var(--geel);
+  border-style: solid;
+  box-shadow: -4px -4px 10px 2px rgb(0, 0, 0, 0.1);
+  padding: -2em;
+}
+
+
+.open {
+  display: none;
+}
+
+.close {
+  display: block;
+}
+
+/*....artikels....*/
+.artikels {
+  z-index: 1;
+  margin-left: 2em;
+  margin-right: 2em;
+  height: 65%;
+  background-color: var(--licht-grijs);
+  border-radius: 0.5em;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 400;
+  transform: translateY(37.5em);
+  font-family: var(--font);
+  border: 0px var(--donker-grijs);
+  border-style: solid;
+  box-shadow: -4px -4px 10px 2px rgb(0, 0, 0, 0.1);
+  padding: -2em;
+}
+
+/*....FOTO-1....*/
+.allergisch-kind {
+  width: 200px;
+  margin-top: 1em;
+  border-radius: 0.5em;
+}
+
+/*....FOTO-2....*/
+.pindabord {
+  width: 200px;
+  margin-top: 0em;
+  border-radius: 0.5em;
+}
+
+.kalender {
+  justify-content: center;
+  margin-top: 5em;
+  margin-bottom: 0em;
+  font-family: var(--font);
+}
+
+/*....KALENDER....*/
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: var(--font);
+}
+
+.month {
+  padding: 30px 25px;
+  width: 100%;
+  background: var(--geel);
+  text-align: center;
+  border-radius: 0.5em;
+  box-shadow: -4px -4px 10px 1px rgb(0, 0, 0, 0.2);
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: var(--black);
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+#calendar {
+  margin-left: 0em;
+  margin-bottom: 10%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#calendar tr,
+#calendar tbody {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+}
+
+#calendar td,
+#calendar th {
+  padding: 4px;
+  box-sizing: border-box;
+  border: 4px solid var(--licht-grijs);
+}
+
+.weekdays {
+  background-color: var(--licht-grijs);
+  border-radius: 0.5em;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13, 6%;
+  color: var(--donker-grijs);
+  text-align: center;
+}
+
+.days {
+  background: var(--licht-grijs);
+  block-size: 10em;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13, 6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: var(--donker-grijs);
+  line-height: 3em;
+}
+
+#calendar a {
+  text-decoration: none;
+}
+
+#calendar td,
+#calendar th {
+  padding: 4px;
+  box-sizing: border-box;
+  border: 2px solid var(--donker-grijs);
+  block-size: 10em;
+  border-radius: 0.5em;
+}
+
+tbody {
+  box-shadow: -4px 1px 10px 1px rgb(0, 0, 0, 0.2);
+}
+
+#calendar .weekdays {
+  background: var(--groen);
+  margin-bottom: 0em;
+}
+
+#calendar .weekdays th {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 20px;
+  border: none;
+  padding: 10px 10px;
+  color: var(--black);
+  font-size: 13px;
+  height: 50%;
+}
+
+#calendar td {
+  min-height: 100px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#calendar .date {
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 4px;
+  background: var(--groen);
+  color: var(--black);
+  width: 27.5px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  align-self: flex-end;
+}
+
+#calendar .event {
+  flex: 0 0 auto;
+  font-size: 13px;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+  line-height: 14px;
+  background: var(--lichtblauw);
+  border: 1px solid var(--donkerblauw);
+  color: var(--black);
+  text-decoration: none;
+}
+
+#calendar .text-agenda {
+  flex: 0 0 auto;
+  font-size: 13px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
+  line-height: 14px;
+  background: var(--lichtblauw);
+  border: 1px solid var(--donkerblauw);
+  color: var(--black);
+  text-decoration: none;
+}
+
+
+#calendar .event-desc {
+  color: var(--black);
+  margin: 3px 0 7px 0;
+  text-decoration: none;
+}
+
+#calendar .other-month {
+  background: var(--licht-grijs);
+}
+
+/*....advies....*/
+.advies {
+  margin-top: 5em;
+  margin-bottom: 37em;
+  margin-left: 2em;
+  margin-right: 2em;
+  background-color: var(--licht-grijs);
+  border-radius: 0.5em;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 400;
+  font-family: var(--font);
+  border: 0px var(--donker-grijs);
+  border-style: solid;
+  box-shadow: -4px -4px 10px 2px rgb(0, 0, 0, 0.1);
+  padding: -2em;
+  }
+
+.button1 {
+  background-color: #f4eb34;
+  border: none;
+  color: var(--black);
+  font-family: var(--font);
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 2em;
+  cursor: pointer;
+  box-shadow: -4px -4px 10px 2px rgb(0, 0, 0, 0.1);
+}
+
+/*....recepten....*/
+
+.recepten{
+  z-index: 0;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: -15em;
+  height: 92%;
+  background-color: var(--licht-grijs);
+  border-radius: 0.5em;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 400;
+  transform: translateY(37.5em);
+  font-family: var(--font);
+  border: 0px var(--donker-grijs);
+  border-style: solid;
+  box-shadow: -4px -4px 10px 2px rgb(0, 0, 0, 0.1);
+  padding: -2em;
+}
+
+.pindazakje1 {
+  width: 200px;
+  margin-top: 1em;
+  border-radius: 0.5em;
+}
+
+.pindazakje2 {
+  width: 200px;
+  margin-top: 1em;
+  border-radius: 0.5em;
+}
+
+.pindazakje3 {
+  width: 200px;
+  margin-top: 1em;
+  border-radius: 0.5em;
+}
+
+
+/*....POP-UP NOTIFICATION....*/
+
+html, body {
+  font-family: var(--font);  
+}
+
+.fa{
+  line-height:30px;
+  font-size: 35px;
+  display:inline-block;
+  width:35px;
+  height:25px;
+}
+
+.hidden{
+  display:none;
+}
+
+input[type=checkbox] + label {
+  position:fixed;
+  top: 0;
+  
+} 
+
+input[type=checkbox]:checked + label {
+  animation: closing 0.3s forwards ease-in-out,
+             moving 0.3s forwards ease-in-out;
+} 
+.pointer-cursor{
+   cursor: pointer; cursor: hand;
+}
+.close{
+    float:right;
+    color: var(--black);
+    cursor: pointer; cursor: hand;
+    margin-top: -15em;
+}
+
+.alert-message{
+  border-radius: 3px;
+  line-height:30px;
+  margin-left: 70em;
+  margin-top: 27.5em;
+  display:block;
+  width:25%;
+  padding: 17px;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 10px 50px rgba(0,0,0,.6);
+  background:var(--groen);
+}
+
+.alert-message b:first-child {
+  justify-content: center;
+  display: flex;
+}
+
+@keyframes closing {
+  from {
+    opacity: 1; 
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes moving {
+  0%, 90% { top: 0; left: 0; }
+  100%  { top: -100px; left: 0; }
+}
