@@ -1,8 +1,13 @@
-let logboek = document.querySelector("logboek")
-let button = document.querySelector("button")
+function fold() {
+    var logboek = document.getElementById("logboek");
+    logboek.classList.toggle("closed");
 
-button.addEventListener("click", toggle)
+    var logboek = document.getElementById("label");
+    logboek.classList.toggle("hide");
 
-function toggle() {
-    button.classList.toggle("close")
+    var logboek = document.getElementById("artikels");
+    logboek.classList.toggle("move");
+
+    var logboek = document.getElementById("img");
+    logboek.classList.toggle("rotate");
 }

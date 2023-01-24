@@ -19,6 +19,7 @@ ul {
 
 body {
   margin: 0px;
+  padding: 0px;
 }
 
 @media screen and (max-width:800px) {
@@ -26,22 +27,12 @@ body {
     width: 100vw;
   }
 
-  .Verzendkosten {
-    width: 260vw;
-  }
-
-  header li {
-    width: 25vw;
-  }
-
-
   header nav {
-    width: 450vw;
+    display: none;
   }
 
   body .kalender {
     margin: 0;
-    width: 260vw;
   }
 }
 
@@ -65,7 +56,6 @@ header {
   z-index: 3;
   width: 100%;
 }
-
 
 header ul {
   display: flex;
@@ -136,11 +126,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr 0.5fr;
-  grid-template-areas:
-    " l k f "
-    " a k r "
-  ;
-
+  grid-template-areas: " l k f " " a k r ";
   grid-column-gap: 0px;
 }
 
@@ -153,7 +139,7 @@ h2 {
 }
 
 .advies {
- grid-area: f;
+  grid-area: f;
 }
 
 .artikels {
@@ -164,7 +150,6 @@ h2 {
   grid-area: f;
 }
 
-
 /*....LOGBOEK....*/
 .logboek {
   margin-top: 5em;
@@ -173,23 +158,50 @@ h2 {
   margin-right: 2em;
   background-color: var(--geel);
   border-radius: 0.5em;
-  font-size: 1em;
-  font-weight: 400;
-  text-align: left;
+  text-align: center;
   font-family: var(--font);
   border: 5px var(--geel);
   border-style: solid;
   box-shadow: -4px -4px 10px 2px rgb(0, 0, 0, 0.1);
   padding: -2em;
+  width: 240px;
+  height: 458px;
+  transition: 0.5s;
 }
 
-
-.open {
-  display: none;
+label {
+  transition: 2s;
 }
 
-.close {
-  display: block;
+.closed {
+  height: 65px;
+  transition: 0.7s;
+}
+
+.hide {
+  opacity: 0%;
+  transition: 0.5s;
+}
+
+.move {
+  transform: translateY(13.5em) !important;
+  transition: 1s !important;
+}
+
+.rotate {
+  rotate: 0deg;
+  transition: 0.5s;
+}
+
+h3 img {
+  rotate: 180deg;
+  transition: 0.5s;
+  width: 6%;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
 }
 
 /*....artikels....*/
@@ -197,18 +209,17 @@ h2 {
   z-index: 1;
   margin-left: 2em;
   margin-right: 2em;
-  height: 65%;
+  height: 72%;
   background-color: var(--licht-grijs);
   border-radius: 0.5em;
   text-align: center;
-  font-size: 1em;
-  font-weight: 400;
   transform: translateY(37.5em);
   font-family: var(--font);
   border: 0px var(--donker-grijs);
   border-style: solid;
   box-shadow: -4px -4px 10px 2px rgb(0, 0, 0, 0.1);
   padding: -2em;
+  transition: 0.5s;
 }
 
 /*....FOTO-1....*/
@@ -246,9 +257,11 @@ body {
 }
 
 .month {
-  padding: 30px 25px;
+  padding: 4px 25px;
   width: 100%;
+  margin-bottom: -4.7em;
   background: var(--geel);
+  display: flex;
   text-align: center;
   border-radius: 0.5em;
   box-shadow: -4px -4px 10px 1px rgb(0, 0, 0, 0.2);
@@ -264,16 +277,17 @@ body {
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
+  word-spacing: 3em;
 }
 
 .month .prev {
   float: left;
-  padding-top: 10px;
+  padding-top: 2em;
 }
 
 .month .next {
   float: right;
-  padding-top: 10px;
+  padding-top: 2em;
 }
 
 #calendar {
@@ -335,7 +349,7 @@ body {
 #calendar th {
   padding: 4px;
   box-sizing: border-box;
-  border: 2px solid var(--donker-grijs);
+  border: 4px solid var(--donker-grijs);
   block-size: 10em;
   border-radius: 0.5em;
 }
@@ -367,7 +381,6 @@ tbody {
   flex-direction: column;
 }
 
-
 #calendar .date {
   text-align: center;
   margin-bottom: 5px;
@@ -385,31 +398,17 @@ tbody {
   font-size: 13px;
   border-radius: 4px;
   padding: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   line-height: 14px;
   background: var(--lichtblauw);
   border: 1px solid var(--donkerblauw);
   color: var(--black);
   text-decoration: none;
 }
-
-#calendar .text-agenda {
-  flex: 0 0 auto;
-  font-size: 13px;
-  border-radius: 10px;
-  padding: 5px;
-  margin-bottom: 5px;
-  line-height: 14px;
-  background: var(--lichtblauw);
-  border: 1px solid var(--donkerblauw);
-  color: var(--black);
-  text-decoration: none;
-}
-
 
 #calendar .event-desc {
   color: var(--black);
-  margin: 3px 0 7px 0;
+  margin: 14px 0 7px 0;
   text-decoration: none;
 }
 
@@ -426,14 +425,13 @@ tbody {
   background-color: var(--licht-grijs);
   border-radius: 0.5em;
   text-align: center;
-  font-size: 1em;
-  font-weight: 400;
   font-family: var(--font);
   border: 0px var(--donker-grijs);
   border-style: solid;
   box-shadow: -4px -4px 10px 2px rgb(0, 0, 0, 0.1);
   padding: -2em;
-  }
+  height: 218px;
+}
 
 .button1 {
   background-color: #f4eb34;
@@ -451,18 +449,15 @@ tbody {
 }
 
 /*....recepten....*/
-
-.recepten{
+.recepten {
   z-index: 0;
   margin-left: 2em;
   margin-right: 2em;
   margin-top: -15em;
-  height: 92%;
+  height: 97%;
   background-color: var(--licht-grijs);
   border-radius: 0.5em;
   text-align: center;
-  font-size: 1em;
-  font-weight: 400;
   transform: translateY(37.5em);
   font-family: var(--font);
   border: 0px var(--donker-grijs);
@@ -489,57 +484,58 @@ tbody {
   border-radius: 0.5em;
 }
 
-
 /*....POP-UP NOTIFICATION....*/
-
-html, body {
-  font-family: var(--font);  
+html,
+body {
+  font-family: var(--font);
 }
 
-.fa{
-  line-height:30px;
+.fa {
+  line-height: 30px;
   font-size: 35px;
-  display:inline-block;
-  width:35px;
-  height:25px;
+  display: inline-block;
+  width: 35px;
+  height: 25px;
 }
 
-.hidden{
-  display:none;
+.hidden {
+  display: none;
 }
 
-input[type=checkbox] + label {
-  position:fixed;
+input[type=checkbox]+label {
+  position: fixed;
   top: 0;
-  
-} 
-
-input[type=checkbox]:checked + label {
-  animation: closing 0.3s forwards ease-in-out,
-             moving 0.3s forwards ease-in-out;
-} 
-.pointer-cursor{
-   cursor: pointer; cursor: hand;
-}
-.close{
-    float:right;
-    color: var(--black);
-    cursor: pointer; cursor: hand;
-    margin-top: -15em;
 }
 
-.alert-message{
+input[type=checkbox]:checked+label {
+  animation: closing 0.3s forwards ease-in-out, moving 0.3s forwards ease-in-out;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.close {
+  float: right;
+  color: var(--black);
+  cursor: pointer;
+  cursor: hand;
+  margin-top: -15em;
+}
+
+.alert-message {
   border-radius: 3px;
-  line-height:30px;
+  line-height: 30px;
   margin-left: 70em;
   margin-top: 27.5em;
-  display:block;
-  width:25%;
+  display: block;
+  width: 25%;
   padding: 17px;
   box-sizing: border-box;
   color: rgba(0, 0, 0, 0.9);
-  box-shadow: 0px 10px 50px rgba(0,0,0,.6);
-  background:var(--groen);
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, .6);
+  background: var(--groen);
 }
 
 .alert-message b:first-child {
@@ -549,14 +545,24 @@ input[type=checkbox]:checked + label {
 
 @keyframes closing {
   from {
-    opacity: 1; 
+    opacity: 1;
   }
+
   to {
     opacity: 0;
   }
 }
 
 @keyframes moving {
-  0%, 90% { top: 0; left: 0; }
-  100%  { top: -100px; left: 0; }
+
+  0%,
+  90% {
+    top: 0;
+    left: 0;
+  }
+
+  100% {
+    top: -10000px;
+    left: 0;
+  }
 }
