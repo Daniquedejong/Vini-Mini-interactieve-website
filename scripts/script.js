@@ -1,13 +1,11 @@
+var logboek = document.getElementById("logboek");
+var label = document.getElementById("label");
+var artikels = document.getElementById("artikels");
+var img = document.getElementById("img");
+
 function fold() {
-    var logboek = document.getElementById("logboek");
     logboek.classList.toggle("closed");
-
-    var logboek = document.getElementById("label");
-    logboek.classList.toggle("hide");
-
-    var logboek = document.getElementById("artikels");
-    logboek.classList.toggle("move");
-
-    var logboek = document.getElementById("img");
-    logboek.classList.toggle("rotate");
+    label.classList.toggle("hide");
+    artikels.classList.toggle("move");
+    img.classList.toggle("rotate");
 }
